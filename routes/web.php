@@ -13,11 +13,10 @@ use UniSharp\LaravelFilemanager\Lfm;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::group(['prefix' => 'laravel-filemanager', 'middleware' => ['web', 'auth']], function () {
-    Lfm::routes();
-});
+Route::group(['prefix' => 'filemanager', 'middleware' => ['web', 'auth']], function () {
+     Lfm::routes();
+ });
