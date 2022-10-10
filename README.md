@@ -1,4 +1,4 @@
-# Laravel 8 檔案管理器
+# Laravel 9 檔案管理器
 
 引入 unisharp 的 laravel-filemanager 套件來擴增像應用中的 Dropbox，能集中存放靜態內容，協助使用者管理內容。
 
