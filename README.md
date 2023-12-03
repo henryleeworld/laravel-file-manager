@@ -1,4 +1,4 @@
-# Laravel 9 檔案管理器
+# Laravel 10 檔案管理器
 
 引入 unisharp 的 laravel-filemanager 套件來擴增像應用中的 Dropbox，能集中存放靜態內容，協助使用者管理內容。
 
@@ -20,9 +20,13 @@ $ php artisan key:generate
 ```sh
 $ php artisan migrate
 ```
-- 執行安裝 Laravel Mix 引用的依賴項目，並執行所有 Mix 任務。
+- 執行安裝 Vite 和 Laravel 擴充套件引用的依賴項目。
 ```sh
-$ npm install && npm run dev
+$ npm install
+```
+- 執行正式環境版本化資源管道並編譯。
+```sh
+$ npm run build
 ```
 - 執行 __Artisan__ 指令的 __storage:link__ 來建立連結符號，讓公用可存取的檔案維持在一個目錄中。
 ```sh
@@ -35,8 +39,8 @@ $ php artisan storage:link
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/Xbndz45.png)
+![](https://i.imgur.com/YQTlUHi.png)
 > 登入後方允許進行檔案管理，考量防止未經授權的上傳及在多使用者模式下正常工作
 
-![](https://i.imgur.com/InysDMR.png)
+![](https://i.imgur.com/MY5jS8f.png)
 > 支援多檔案選擇及伺服器儲存集中管理
