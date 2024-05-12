@@ -14,9 +14,9 @@
 
   <title>{{ trans('laravel-filemanager::lfm.title-page') }}</title>
   <link rel="shortcut icon" type="image/png" href="{{ asset('vendor/laravel-filemanager/img/72px color.png') }}">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/css/bootstrap.min.css" integrity="sha512-SbiR/eusphKoMVVXysTKG/7VseWii+Y3FdHrt0EpKgpToZeemhqHeZeLWLhJutz/2ut2Vw1uQEj2MbRF+TVBUA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/themes/base/jquery-ui.min.css" integrity="sha512-ELV+xyi8IhEApPS/pSj66+Jiw+sOT1Mqkzlh8ExXihe4zfqbWkxPRi8wptXIO9g73FSlhmquFlUOuMSoXz5IRw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/jquery-ui-dist@1.13.2/jquery-ui.min.css">
   <link rel="stylesheet" href="{{ asset('vendor/laravel-filemanager/css/cropper.min.css') }}">
   <link rel="stylesheet" href="{{ asset('vendor/laravel-filemanager/css/dropzone.min.css') }}">
   <link rel="stylesheet" href="{{ asset('vendor/laravel-filemanager/css/mime-icons.min.css') }}">
@@ -41,7 +41,7 @@
         <span class="d-none d-lg-inline">{{ trans('laravel-filemanager::lfm.menu-multiple') }}</span>
       </a>
     </div>
-    <a class="navbar-toggler collapsed border-0 px-1 py-2 m-0" data-toggle="collapse" data-target="#nav-buttons">
+    <a class="navbar-toggler collapsed border-0 px-1 py-2 m-0" data-bs-toggle="collapse" data-bs-target="#nav-buttons">
       <i class="fas fa-cog fa-fw"></i>
     </a>
     <div class="collapse navbar-collapse flex-grow-0" id="nav-buttons">
@@ -59,7 +59,7 @@
           </a>
         </li>
         <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
             <i class="fas fa-sort fa-fw"></i>{{ trans('laravel-filemanager::lfm.nav-sort') }}
           </a>
           <div class="dropdown-menu dropdown-menu-right border-0"></div>
@@ -82,7 +82,7 @@
 
       <nav aria-label="breadcrumb" class="d-none d-lg-block" id="breadcrumbs">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item invisible">Home</li>
+          <li class="breadcrumb-item invisible">{{ __('Home') }}</li>
         </ol>
       </nav>
 
@@ -112,7 +112,7 @@
       <div class="modal-content">
         <div class="modal-header">
           <h4 class="modal-title" id="myModalLabel">{{ trans('laravel-filemanager::lfm.title-upload') }}</h4>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="{{ __('Close') }}"><span aia-hidden="true">&times;</span></button>
         </div>
         <div class="modal-body">
           <form action="{{ route('unisharp.lfm.upload') }}" role='form' id='uploadForm' name='uploadForm' method='post' enctype='multipart/form-data' class="dropzone">
@@ -141,6 +141,17 @@
         <div class="modal-body"></div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">{{ trans('laravel-filemanager::lfm.btn-close') }}</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="modal fade" id="confirm" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-body"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary w-100" data-bs-dismiss="modal">{{ trans('laravel-filemanager::lfm.btn-close') }}</button>
           <button type="button" class="btn btn-primary w-100" data-bs-dismiss="modal">{{ trans('laravel-filemanager::lfm.btn-confirm') }}</button>
         </div>
       </div>
@@ -164,9 +175,9 @@
     </div>
   </div>
 
-  <div id="carouselTemplate" class="d-none carousel slide bg-light" data-ride="carousel">
+  <div id="carouselTemplate" class="d-none carousel slide bg-light" data-bs-ride="carousel">
     <ol class="carousel-indicators">
-      <li data-target="#previewCarousel" data-slide-to="0" class="active"></li>
+      <li data-bs-target="#previewCarousel" data-bs-slide-to="0" class="active"></li>
     </ol>
     <div class="carousel-inner">
       <div class="carousel-item active">
@@ -174,23 +185,23 @@
         <div class="carousel-image"></div>
       </div>
     </div>
-    <a class="carousel-control-prev" href="#previewCarousel" role="button" data-slide="prev">
+    <a class="carousel-control-prev" href="#previewCarousel" role="button" data-bs-slide="prev">
       <div class="carousel-control-background" aria-hidden="true">
         <i class="fas fa-chevron-left"></i>
       </div>
-      <span class="sr-only">Previous</span>
+      <span class="sr-only">{{ __('Previous') }}</span>
     </a>
-    <a class="carousel-control-next" href="#previewCarousel" role="button" data-slide="next">
+    <a class="carousel-control-next" href="#previewCarousel" role="button" data-bs-slide="next">
       <div class="carousel-control-background" aria-hidden="true">
         <i class="fas fa-chevron-right"></i>
       </div>
-      <span class="sr-only">Next</span>
+      <span class="sr-only">{{ __('Next') }}</span>
     </a>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.3/js/bootstrap.bundle.min.js" integrity="sha512-i9cEfJwUwViEPFKdC1enz4ZRGBj8YQo6QByFTF92YXHi7waCqyexvRD75S5NVTsSiTv7rKWqG9Y5eFxmRsOn0A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js" integrity="sha512-57oZ/vW8ANMjR/KQ6Be9v/+/h6bq9/l3f0Oc7vn6qMqyhvPd1cvKBRWWpzu0QoneImqr2SkmO4MSqU+RpHom3Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jquery-ui-dist@1.13.2/jquery-ui.min.js"></script>
   <script src="{{ asset('vendor/laravel-filemanager/js/cropper.min.js') }}"></script>
   <script src="{{ asset('vendor/laravel-filemanager/js/dropzone.min.js') }}"></script>
   <script>

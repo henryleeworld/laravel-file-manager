@@ -1,5 +1,5 @@
 <div class="m-3 d-block d-lg-none">
-  <h1 style="font-size: 1.5rem;">Laravel File Manager</h1>
+  <h1 style="font-size: 1.5rem;">{{ __('File Manager') }}</h1>
   <small class="d-block">Ver 2.0</small>
   <div class="row mt-3">
     <div class="col-4">
@@ -7,7 +7,7 @@
     </div>
 
     <div class="col-8">
-      <p>Current usage :</p>
+      <p>{{ __('Current usage:') }}</p>
       <p>20 GB (Max : 1 TB)</p>
     </div>
   </div>

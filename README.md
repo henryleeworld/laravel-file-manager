@@ -1,4 +1,4 @@
-# Laravel 10 檔案管理器
+# Laravel 11 檔案總管
 
 引入 unisharp 的 laravel-filemanager 套件來擴增像應用中的 Dropbox，能集中存放靜態內容，協助使用者管理內容。
 
@@ -34,13 +34,13 @@ $ php artisan storage:link
 ```
 - 在瀏覽器中輸入已定義的路由 URL 來訪問，例如：http://127.0.0.1:8000。
 - 你可以經由 `/register` 來進行註冊。
-- 也可以經由 `/login` 來進行登入，登入後可以經由 `/filemanager` 來進行檔案管理器管理內容。
+- 也可以經由 `/login` 來進行登入，登入後可以經由 `/filemanager` 來進行檔案總管管理內容。
 
 ----
 
 ## 畫面截圖
-![](https://i.imgur.com/YQTlUHi.png)
+![](https://i.imgur.com/ZPdfysA.png)
 > 登入後方允許進行檔案管理，考量防止未經授權的上傳及在多使用者模式下正常工作
 
-![](https://i.imgur.com/MY5jS8f.png)
+![](https://i.imgur.com/HuWH1en.png)
 > 支援多檔案選擇及伺服器儲存集中管理
